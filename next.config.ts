@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
         port: "",
       },
     ],
+    unoptimized: true,
   },
+  output: "export",
 };
 
 export default nextConfig;
