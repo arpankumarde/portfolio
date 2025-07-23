@@ -23,7 +23,7 @@ import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const customItemVariants: Variants = {
+export const customItemVariants: Variants = {
   hidden: {
     opacity: 0,
     filter: "blur(12px)",
@@ -41,7 +41,7 @@ const customItemVariants: Variants = {
   },
 };
 
-const sectionContainerVariants: Variants = {
+export const sectionContainerVariants: Variants = {
   visible: {
     transition: {
       staggerChildren: 0.08,
