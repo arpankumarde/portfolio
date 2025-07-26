@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     ],
     unoptimized: true,
   },
+  transpilePackages: ["next-mdx-remote"],
   output: "export",
 };
 
