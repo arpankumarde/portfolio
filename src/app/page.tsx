@@ -250,15 +250,17 @@ const Page = () => {
             }}
             className="mt-4 space-y-6"
           >
-            {profile.hackathons.map((hack, key) => (
-              <div className="flex justify-between items-start" key={key}>
-                <div>
-                  <p className="font-semibold">{hack.title}</p>
-                  <p className="text-zinc-400 max-w-md">{hack.description}</p>
+            {profile.hackathons
+              .filter((hack) => hack.featured)
+              .map((hack, key) => (
+                <div className="flex justify-between items-start" key={key}>
+                  <div>
+                    <p className="font-semibold">{hack.title}</p>
+                    <p className="text-zinc-400 max-w-md">{hack.description}</p>
+                  </div>
+                  <p className="text-zinc-400 text-sm">{hack.location}</p>
                 </div>
-                <p className="text-zinc-400 text-sm">{hack.location}</p>
-              </div>
-            ))}
+              ))}
           </AnimatedGroup>
         </section>
 
@@ -324,7 +326,7 @@ const Page = () => {
                 key={key}
                 className="flex justify-between items-center py-4 border-b border-zinc-800 hover:bg-zinc-900 px-2"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-1">
                   <Image
                     src={cert.image || ""}
                     alt={cert.name}
@@ -332,37 +334,35 @@ const Page = () => {
                     height={50}
                     className="h-10 aspect-square object-contain"
                   />
-                  <Link
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex gap-2 group"
-                  >
-                    {cert.name}
-                    {cert.sponsored && (
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <HeartIcon
-                            size={18}
-                            weight="fill"
-                            className="inline text-pink-500"
-                          />
-                        </TooltipTrigger>
-                        <TooltipContent>Sponsored</TooltipContent>
-                      </Tooltip>
-                    )}
-                    <span className="text-zinc-400 inline-flex items-center space-x-1 group-hover:text-red-400 transition-colors">
-                      <ArrowUpRightIcon size={16} />
+                  <div className="flex-1 flex max-md:flex-col md:items-center justify-between">
+                    <Link
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 space-x-2 group hover:text-red-400 transition-colors"
+                    >
+                      <span>{cert.name}</span>
+                      {cert.sponsored && (
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <HeartIcon
+                              size={18}
+                              weight="fill"
+                              className="inline text-pink-500"
+                            />
+                          </TooltipTrigger>
+                          <TooltipContent>Sponsored</TooltipContent>
+                        </Tooltip>
+                      )}
+                      <span className="text-zinc-400 inline space-x-1 group-hover:text-red-400 transition-colors">
+                        <ArrowUpRightIcon size={16} className="inline" />
+                      </span>
+                    </Link>
+                    <span className="text-zinc-400">
+                      {cert.provider}
                     </span>
-                    <br />
-                    <span className="text-zinc-400 sm:hidden">
-                      Issued by {cert.provider}
-                    </span>
-                  </Link>
+                  </div>
                 </div>
-                <span className="hidden sm:inline text-zinc-400">
-                  {cert.provider}
-                </span>
               </div>
             ))}
           </AnimatedGroup>
