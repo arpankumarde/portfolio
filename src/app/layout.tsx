@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SocialWidget from "@/components/blocks/social_widget";
+import Navbar from "@/components/layout/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} text-white dark bg-gradient-to-tr from-60% to-red-500/10`}
       >
+        <Navbar />
         <SocialWidget />
         {children}
       </body>
