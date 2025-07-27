@@ -15,9 +15,9 @@ export function ArticleCard({ article }: { article: Article }) {
 
   return (
     <article className="group relative overflow-hidden rounded-xl border border-border/50 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/20 hover:-translate-y-1">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/60 via-primary to-primary/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/60 via-primary to-primary/60 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left pointer-events-none" />
 
       <div className="relative p-6 flex flex-col h-full">
         <div className="flex items-start justify-between mb-4">
@@ -85,10 +85,10 @@ export function ArticleCard({ article }: { article: Article }) {
         <div className="flex items-center justify-between">
           <Button
             asChild
-            className="group/btn bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-0"
+            className="group/btn bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 z-40"
           >
             <Link
-              href={`/article/${article.slug}`}
+              href={`/articles/${article.slug}`}
               className="flex items-center gap-2"
             >
               <span className="font-semibold">Read Article</span>

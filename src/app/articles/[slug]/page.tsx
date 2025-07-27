@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             className="text-zinc-100 bg-zinc-800/90 backdrop-blur-sm border border-zinc-700 rounded-xl hover:bg-red-400 hover:border-red-400 transition-all duration-300 size-10 shadow-lg hover:shadow-red-400/25 hover:scale-110"
             asChild
           >
-            <Link href="/article">
+            <Link href="/articles">
               <ArrowLeftIcon weight="bold" />
             </Link>
           </Button>

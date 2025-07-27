@@ -5,7 +5,7 @@ const Gallery = () => {
   return (
     <div className="mt-4 grid grid-cols-4 gap-4 auto-rows-[200px]">
       {/* Large panoramic - spans 3 columns */}
-      <div className="col-span-3 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
+      <div className="max-sm:col-span-4 col-span-3 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
         <Image
           fill
           src={Assets.gallery[0].image}
@@ -20,7 +20,7 @@ const Gallery = () => {
       </div>
 
       {/* Tall portrait - spans 2 rows */}
-      <div className="col-span-1 row-span-2 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
+      <div className="max-sm:hidden col-span-1 row-span-2 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
         <Image
           fill
           src={Assets.gallery[1].image}
@@ -35,7 +35,7 @@ const Gallery = () => {
       </div>
 
       {/* Square image 1 */}
-      <div className="col-span-1 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
+      <div className="max-sm:col-span-2 col-span-1 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
         <Image
           fill
           src={Assets.gallery[2].image}
@@ -108,7 +108,7 @@ const Gallery = () => {
       </div> */}
 
       {/* Square image 5 */}
-      <div className="col-span-1 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
+      <div className="max-sm:hidden col-span-1 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
         <Image
           fill
           src={Assets.gallery[6].image}
@@ -138,7 +138,7 @@ const Gallery = () => {
       </div>
 
       {/* Square image 6 */}
-      <div className="col-span-1 row-span-2 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
+      <div className="max-sm:col-span-2 col-span-1 row-span-2 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
         <Image
           fill
           src={Assets.gallery[8].image}
@@ -153,7 +153,7 @@ const Gallery = () => {
       </div>
 
       {/* Square image 7 */}
-      <div className="col-span-1 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
+      <div className="max-sm:hidden col-span-1 row-span-1 group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800">
         <Image
           fill
           src={Assets.gallery[9].image}
