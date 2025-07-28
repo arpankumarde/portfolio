@@ -9,6 +9,7 @@ import {
   CodeIcon,
   FilePdfIcon,
   HouseIcon,
+  NewspaperIcon,
   PhoneIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import profile from "@/data/profile";
@@ -26,7 +27,7 @@ const Navbar = () => {
     { name: "Home", url: "/", icon: HouseIcon },
     { name: "Hackathons", url: "/hackathons", icon: CodeIcon },
     { name: "Resume", url: profile?.resume, icon: FilePdfIcon, newpage: true },
-    // { name: "Articles", url: "/articles", icon: FilePdfIcon },
+    { name: "Articles", url: "/articles", icon: NewspaperIcon },
   ];
 
   const [activeTab, setActiveTab] = useState(items[0]?.name ?? "");

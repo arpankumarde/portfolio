@@ -18,17 +18,18 @@ export default function ArticlesPage() {
     <div className="min-h-screen text-white">
       <div className="max-w-6xl mx-auto px-8 py-12">
         <AnimatedGroup preset="slide" className="space-y-8">
-          <header className="flex items-center gap-4">
+          <header className="flex items-start gap-4">
             <Button
               size="icon"
               variant="ghost"
-              className="text-zinc-100 bg-zinc-800/90 backdrop-blur-sm border border-zinc-700 rounded-xl hover:bg-red-400 hover:border-red-400 transition-all duration-300 size-10 shadow-lg hover:shadow-red-400/25 hover:scale-110"
+              className="mt-1 text-zinc-100 bg-zinc-800/90 backdrop-blur-sm border border-zinc-700 rounded-xl hover:bg-red-400 hover:border-red-400 transition-all duration-300 size-10 shadow-lg hover:shadow-red-400/25 hover:scale-110"
               asChild
             >
               <Link href="/">
                 <ArrowLeftIcon weight="bold" />
               </Link>
             </Button>
+
             <div>
               <h1 className="text-4xl font-bold mb-2">Articles</h1>
               <p className="text-zinc-400 text-lg">
@@ -38,7 +39,6 @@ export default function ArticlesPage() {
             </div>
           </header>
 
-          {/* Articles Grid */}
           {articles.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {articles.map((article, index) => (
