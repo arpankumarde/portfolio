@@ -358,9 +358,7 @@ const Page = () => {
                         <ArrowUpRightIcon size={16} className="inline" />
                       </span>
                     </Link>
-                    <span className="text-zinc-400">
-                      {cert.provider}
-                    </span>
+                    <span className="text-zinc-400">{cert.provider}</span>
                   </div>
                 </div>
               </div>
@@ -381,12 +379,6 @@ const Page = () => {
           </AnimatedGroup>
         </section>
       </main>
-
-      <footer className="text-center text-zinc-500 py-8">
-        <p>
-          © {new Date().getFullYear()} {profile.name}. All rights reserved.
-        </p>
-      </footer>
     </AnimatedGroup>
   );
 };

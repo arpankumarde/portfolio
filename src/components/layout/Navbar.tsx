@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -22,7 +23,9 @@ interface NavItem {
   icon: Icon;
   newpage?: boolean;
 }
+
 const Navbar = () => {
+  const pathname = usePathname();
   const items: NavItem[] = [
     { name: "Home", url: "/", icon: HouseIcon },
     { name: "Hackathons", url: "/hackathons", icon: CodeIcon },
@@ -30,7 +33,21 @@ const Navbar = () => {
     { name: "Articles", url: "/articles", icon: NewspaperIcon },
   ];
 
-  const [activeTab, setActiveTab] = useState(items[0]?.name ?? "");
+  const getActiveTab = (currentPath: string) => {
+    const exactMatch = items.find((item) => item.url === currentPath);
+    if (exactMatch) return exactMatch.name;
+
+    if (currentPath.startsWith("/articles")) return "Articles";
+    if (currentPath.startsWith("/hackathons")) return "Hackathons";
+
+    return "Home";
+  };
+
+  const [activeTab, setActiveTab] = useState(() => getActiveTab(pathname));
+
+  useEffect(() => {
+    setActiveTab(getActiveTab(pathname));
+  }, [pathname]);
 
   useEffect(() => {
     (async function () {
