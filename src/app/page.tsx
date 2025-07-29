@@ -8,6 +8,7 @@ import {
   TrophyIcon,
   GraduationCapIcon,
   HeartIcon,
+  MapPinSimpleIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import Image from "next/image";
@@ -253,12 +254,20 @@ const Page = () => {
             {profile.hackathons
               .filter((hack) => hack.featured)
               .map((hack, key) => (
-                <div className="flex justify-between items-start" key={key}>
+                <div
+                  className="flex max-sm:flex-col justify-between items-start gap-2"
+                  key={key}
+                >
                   <div>
                     <p className="font-semibold">{hack.title}</p>
                     <p className="text-zinc-400 max-w-md">{hack.description}</p>
                   </div>
-                  <p className="text-zinc-400 text-sm">{hack.location}</p>
+                  <p className="text-zinc-400 text-sm">
+                    <span className="md:hidden">
+                      <MapPinSimpleIcon className="inline" size={20} />{" "}
+                    </span>
+                    {hack.location}
+                  </p>
                 </div>
               ))}
           </AnimatedGroup>
@@ -358,7 +367,10 @@ const Page = () => {
                         <ArrowUpRightIcon size={16} className="inline" />
                       </span>
                     </Link>
-                    <span className="text-zinc-400">{cert.provider}</span>
+                    <span className="text-zinc-400">
+                      <span className="md:hidden">Issued by </span>
+                      {cert.provider}
+                    </span>
                   </div>
                 </div>
               </div>
