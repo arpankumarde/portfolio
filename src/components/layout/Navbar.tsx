@@ -28,7 +28,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const items: NavItem[] = [
     { name: "Home", url: "/", icon: HouseIcon },
-    { name: "Hackathons", url: "/hackathons", icon: CodeIcon },
+    { name: "Works", url: "/works", icon: CodeIcon },
     { name: "Resume", url: profile?.resume, icon: FilePdfIcon, newpage: true },
     { name: "Articles", url: "/articles", icon: NewspaperIcon },
   ];

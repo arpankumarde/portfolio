@@ -173,9 +173,7 @@ const Page = () => {
               <h3 className="text-xl font-bold">Works</h3>
             </div>
             <Link
-              href={profile.socials[1].url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/works"
               className="text-zinc-400 flex items-center space-x-1 hover:text-red-400 transition-colors"
             >
               <span>more</span>
