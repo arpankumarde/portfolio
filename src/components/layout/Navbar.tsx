@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -24,16 +24,17 @@ interface NavItem {
   newpage?: boolean;
 }
 
+const items: NavItem[] = [
+  { name: "Home", url: "/", icon: HouseIcon },
+  { name: "Works", url: "/works", icon: CodeIcon },
+  { name: "Resume", url: profile?.resume, icon: FilePdfIcon, newpage: true },
+  { name: "Articles", url: "/articles", icon: NewspaperIcon },
+];
+
 const Navbar = () => {
   const pathname = usePathname();
-  const items: NavItem[] = [
-    { name: "Home", url: "/", icon: HouseIcon },
-    { name: "Works", url: "/works", icon: CodeIcon },
-    { name: "Resume", url: profile?.resume, icon: FilePdfIcon, newpage: true },
-    { name: "Articles", url: "/articles", icon: NewspaperIcon },
-  ];
 
-  const getActiveTab = (currentPath: string) => {
+  const getActiveTab = useCallback((currentPath: string) => {
     const exactMatch = items.find((item) => item.url === currentPath);
     if (exactMatch) return exactMatch.name;
 
@@ -41,13 +42,13 @@ const Navbar = () => {
     if (currentPath.startsWith("/hackathons")) return "Hackathons";
 
     return "Home";
-  };
+  }, []);
 
   const [activeTab, setActiveTab] = useState(() => getActiveTab(pathname));
 
   useEffect(() => {
     setActiveTab(getActiveTab(pathname));
-  }, [pathname]);
+  }, [pathname, getActiveTab]);
 
   useEffect(() => {
     (async function () {
