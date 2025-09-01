@@ -53,7 +53,7 @@ const SocialWidget = () => {
             <TooltipTrigger asChild>
               <Button
                 size="icon"
-                className="text-zinc-100 bg-zinc-800/90 backdrop-blur-sm border border-zinc-700 rounded-xl hover:bg-red-400 hover:border-red-400 transition-all duration-300 size-12 shadow-lg hover:shadow-red-400/25 hover:scale-110"
+                className="text-zinc-100 bg-zinc-800/90 backdrop-blur-sm border border-zinc-700 rounded-xl hover:bg-red-400/60 hover:border-red-400/60 transition-all duration-300 size-12 shadow-lg hover:shadow-red-400/25 hover:scale-110"
                 asChild
               >
                 <Link

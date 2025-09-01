@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 {article.tags && article.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {article.tags.map((tag) => (
-                      <Badge key={tag} className="bg-red-500/30 text-zinc-200">
+                      <Badge key={tag} className="bg-red-500/40 text-zinc-200">
                         {tag}
                       </Badge>
                     ))}

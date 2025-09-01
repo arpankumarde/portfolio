@@ -71,7 +71,7 @@ const Page = () => {
         <Image
           src={profile.avatar}
           alt={profile.name}
-          className="w-20 h-20 rounded-full border-3 border-red-400"
+          className="w-20 h-20 rounded-full border-3 border-red-400/60"
           height={200}
           width={200}
         />
@@ -125,7 +125,7 @@ const Page = () => {
                 <Button
                   key={key}
                   size={"icon"}
-                  className="text-zinc-100 bg-zinc-700 rounded-lg hover:bg-red-400 transition-colors size-9"
+                  className="text-zinc-100 bg-zinc-700 rounded-lg hover:bg-red-400/60 transition-colors size-9"
                   asChild
                 >
                   <Link
@@ -152,7 +152,7 @@ const Page = () => {
               container: sectionContainerVariants,
               item: customItemVariants,
             }}
-            className="mt-4 space-y-6 border-l-2 border-red-400 pl-6"
+            className="mt-4 space-y-6 border-l-2 border-red-400/60 pl-6"
           >
             {profile.experience.map((exp, index) => (
               <div className="relative" key={index}>
