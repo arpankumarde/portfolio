@@ -119,3 +119,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.global-background {
+  background: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      rgba(255, 80, 120, 0.25),
+      transparent 70%
+    ),
+    #00000000;
+}

@@ -39,12 +39,15 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${inter.className} text-white dark bg-gradient-to-tr from-60% to-red-500/10`}
+        className={`${inter.className} text-white dark min-h-screen w-full relative `}
       >
-        <Navbar />
-        <SocialWidget />
-        {children}
-        <Footer />
+        <div className="fixed inset-0 z-0 global-background" />
+        <div className="relative">
+          <Navbar />
+          <SocialWidget />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
