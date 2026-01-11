@@ -65,7 +65,7 @@ const Page = () => {
         },
         item: customItemVariants,
       }}
-      className="max-w-4xl mx-auto p-8 space-y-12 text-white"
+      className="max-w-3xl mx-auto p-8 space-y-12 text-white"
     >
       <header className="flex items-center space-x-4">
         <Image
@@ -187,43 +187,50 @@ const Page = () => {
             }}
             className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            {profile.works.map((work) => (
-              <Link
-                href={work.link}
-                key={work.title}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col gap-2 justify-between p-4 border border-zinc-800 rounded-lg hover:bg-zinc-900 hover:border-red-400 transition-all"
-              >
-                <Image
-                  src={work.cover}
-                  alt={work.title}
-                  width={1800}
-                  height={900}
-                  className="rounded-t-lg group-hover:scale-105 transition-all duration-300"
-                />
-                {work.hasAccolades && (
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button
-                        size={"icon"}
-                        className="bg-red-500 hover:bg-red-600 absolute top-6 right-6 text-white rounded-full shadow-md size-7"
-                      >
-                        <MedalIcon size={20} weight="fill" className="size-4" />
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      This project has received special recognition!
-                    </TooltipContent>
-                  </Tooltip>
-                )}
-                <span className="flex justify-between items-center text-xl">
-                  {work.title}
-                  <ArrowUpRightIcon size={20} className="text-zinc-500" />
-                </span>
-                <span className="text-zinc-300">{work.description}</span>
-              </Link>
-            ))}
+            {profile.works
+              .filter((work) => work.featured)
+              .slice(0, 4)
+              .map((work) => (
+                <Link
+                  href={work.link}
+                  key={work.title}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col gap-2 justify-between p-4 border border-zinc-800 rounded-lg bg-zinc-900/80 hover:border-red-400 transition-all"
+                >
+                  <Image
+                    src={work.cover}
+                    alt={work.title}
+                    width={1800}
+                    height={900}
+                    className="rounded-t-lg group-hover:scale-105 transition-all duration-300"
+                  />
+                  {work.hasAccolades && (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          size={"icon"}
+                          className="bg-red-500 hover:bg-red-600 absolute top-6 right-6 text-white rounded-full shadow-md size-7"
+                        >
+                          <MedalIcon
+                            size={20}
+                            weight="fill"
+                            className="size-4"
+                          />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        This project has received special recognition!
+                      </TooltipContent>
+                    </Tooltip>
+                  )}
+                  <span className="flex justify-between items-center text-xl">
+                    {work.title}
+                    <ArrowUpRightIcon size={20} className="text-zinc-500" />
+                  </span>
+                  <span className="text-zinc-300">{work.description}</span>
+                </Link>
+              ))}
           </AnimatedGroup>
         </section>
 

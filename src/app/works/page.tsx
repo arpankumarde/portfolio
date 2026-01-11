@@ -48,7 +48,7 @@ const Page = () => {
               key={work.title}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col gap-2 justify-between p-4 border border-zinc-800 rounded-lg hover:bg-zinc-900 hover:border-red-400 transition-all"
+              className="group flex flex-col gap-2 justify-between p-4 border border-zinc-800 rounded-lg bg-zinc-900/80 hover:border-red-400 transition-all"
             >
               <Image
                 src={work.cover}
